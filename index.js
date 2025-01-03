@@ -86,7 +86,7 @@ const home = fs.readFileSync("./sample.txt")
 const server = http.createServer((req, res) => {
 
     if (req.url==="/") {
-        res.end(home)
+        return res.end(home)
         
     }
     
@@ -94,15 +94,15 @@ const server = http.createServer((req, res) => {
 
     if(req.url==="/about")
     {
-        res.end("<h1>About page</h1>"); // Sending response
+        return res.end("<h1>About page</h1>"); // Sending response
     }
     if(req.url==="/contact")
         {
-            res.end("<h1>Contact  page</h1>"); // Sending response
+            return res.end("<h1>Contact  page</h1>"); // Sending response
         }
     if(req.url==="/service")
             {
-                res.end("<h1>Service page</h1>"); // Sending response
+                return res.end("<h1>Service page</h1>"); // Sending response
             }
     
     else{
